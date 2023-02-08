@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조그만 종업식 인생1+3컷</title>
+  <style>
+    /* 이서윤체 폰트 적용을 위한 코드 */
+    @font-face {
+      font-family: "LeeSeoyun";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* body태그 자체에 css 요소 부여 */
+    body {
+      font-family: "LeeSeoyun";
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      background-image: url("./background.png");
+    }
+
+    .container {
+      width: 390px;
+      background-color: pink;
+      height: 100%;
+    }
+
+    .photos {
+      margin-top: 30px;
+    }
+
+    .photo-frame {
+      background-color: white;
+      height: 200px;
+      margin: 15px 20px;
+
+      position: relative;
+
+      background-size: cover;
+      cursor: pointer;
+    }
+
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .f-title {
+      color: white;
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .f-date {
+      color: white;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    #image1 {
+      background-image: url("./img1.jpg");
+    }
+    #image2 {
+      background-image: url("./img2.jpg");
+    }
+    #image3 {
+      background-image: url("./img3.jpg");
+    }
+    #image4 {
+      background-image: url("./img4.jpg");
+    }
+    #image5 {
+      background-image: url("./img5.jpg");
+    }
+    #image6 {
+      background-image: url("./img6.jpg");
+    }
+    #image7 {
+      background-image: url("./img7.jpg");
+    }
+    #image8 {
+      background-image: url("./img8.jpg");
+    }
+    #image9 {
+      background-image: url("./img9.jpg");
+    }
+    #image10 {
+      background-image: url("./img10.jpg");
+    }
+    #image11 {
+      background-image: url("./img11.jpg");
+    }
+    #image12 {
+      background-image: url("./img12.jpg");
+    }
+    #image13 {
+      background-image: url("./img13.jpg");
+    }
+
+    /*#image4 {
+      background-image: url("./img4.jpg");
+    }
+    */
+
+    .photo_description {
+      color: white;
+      background-color: black;
+
+      width: fit-content;
+      padding: 0 20px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+
+      position: absolute;
+      bottom: 0;
+      transform: translate(-50%)
+      left 50%;
+
+      opacity: 0;
+    }
+
+    .video {
+      width: 100%;
+      height: 100%;
+    }
+
+    .showText {
+      opacity: 0;
+    }
+
+    .hideText {
+      opacity: 1;
+      transition: opacity 0.5s linear;
+    }
+  </style>
+  <script>
+    // 텍스트가 보여지는 기능
+    // 1. 몇 번째 사진에 마우스가 올라갔는지 확인(if문)
+    // 2. 해당 사진을 찾아 hideText class를 지워주고, showText는 삽입해줌
+    function showText(number) {
+      if (number === 1) {
+        document.querySelector("#desc1").classList.remove("hideText");
+        document.querySelector("#desc1").classList.add("showText");
+      } else if (number === 2) {
+        document.querySelector("#desc2").classList.remove("hideText");
+        document.querySelector("#desc2").classList.add("showText");
+      } else if (number === 3) {
+        document.querySelector("#desc3").classList.remove("hideText");
+        document.querySelector("#desc3").classList.add("showText");
+      } else if (number === 4) {
+        document.querySelector("#desc4").classList.remove("hideText");
+        document.querySelector("#desc4").classList.add("showText");
+      } else if (number === 5) {
+        document.querySelector("#desc5").classList.remove("hideText");
+        document.querySelector("#desc5").classList.add("showText");
+      } else if (number === 6) {
+        document.querySelector("#desc6").classList.remove("hideText");
+        document.querySelector("#desc6").classList.add("showText");
+      } else if (number === 7) {
+        document.querySelector("#desc7").classList.remove("hideText");
+        document.querySelector("#desc7").classList.add("showText");
+      } else if (number === 8) {
+        document.querySelector("#desc8").classList.remove("hideText");
+        document.querySelector("#desc8").classList.add("showText");
+      } else if (number === 9) {
+        document.querySelector("#desc9").classList.remove("hideText");
+        document.querySelector("#desc9").classList.add("showText");
+      } else if (number === 10) {
+        document.querySelector("#desc10").classList.remove("hideText");
+        document.querySelector("#desc10").classList.add("showText");
+      } else if (number === 11) {
+        document.querySelector("#desc11").classList.remove("hideText");
+        document.querySelector("#desc11").classList.add("showText");
+      } else if (number === 12) {
+        document.querySelector("#desc12").classList.remove("hideText");
+        document.querySelector("#desc12").classList.add("showText");
+      } else {
+        document.querySelector("#desc13").classList.remove("hideText");
+        document.querySelector("#desc13").classList.add("showText");
+      }
+    }
+
+    // 텍스트가 감춰지는 기능
+    // 1. 몇 번째 사진에서 마우스가 벗어났는지 확인(if문)
+    // 2. 해당 사진을 찾아 shotText class를 지워주고, hideText는 삽입해줌
+    function hideText(number) {
+      if (number === 1) {
+        document.querySelector("#desc1").classList.remove("showText");
+        document.querySelector("#desc1").classList.add("hideText");
+      } else if (number === 2) {
+        document.querySelector("#desc2").classList.remove("showText");
+        document.querySelector("#desc2").classList.add("hideText");
+      } else if (number === 3) {
+        document.querySelector("#desc3").classList.remove("showText");
+        document.querySelector("#desc3").classList.add("hideText");
+      } else if (number === 4) {
+        document.querySelector("#desc4").classList.remove("showText");
+        document.querySelector("#desc4").classList.add("hideText");
+      } else if (number === 5) {
+        document.querySelector("#desc5").classList.remove("showText");
+        document.querySelector("#desc5").classList.add("hideText");
+      } else if (number === 6) {
+        document.querySelector("#desc6").classList.remove("showText");
+        document.querySelector("#desc6").classList.add("hideText");
+      } else if (number === 7) {
+        document.querySelector("#desc7").classList.remove("showText");
+        document.querySelector("#desc7").classList.add("hideText");
+      } else if (number === 8) {
+        document.querySelector("#desc8").classList.remove("showText");
+        document.querySelector("#desc8").classList.add("hideText");
+      } else if (number === 9) {
+        document.querySelector("#desc9").classList.remove("showText");
+        document.querySelector("#desc9").classList.add("hideText");
+      } else if (number === 10) {
+        document.querySelector("#desc10").classList.remove("showText");
+        document.querySelector("#desc10").classList.add("hideText");
+      } else if (number === 11) {
+        document.querySelector("#desc11").classList.remove("showText");
+        document.querySelector("#desc11").classList.add("hideText");
+      } else if (number === 12) {
+        document.querySelector("#desc12").classList.remove("showText");
+        document.querySelector("#desc12").classList.add("hideText");
+      } else {
+        document.querySelector("#desc13").classList.remove("showText");
+        document.querySelector("#desc13").classList.add("hideText");
+      }
+    }
+
+    // 클릭 기능
+    // 1. 선택된 사진의 숫자를 가진 텍스트를 alert 형태로 출력해줌
+    function alertText(number) {
+      if (number === 1) {
+        alert(`${number}번 : 서연이에게 \n 서연아! 나랑 유일하게 같이 15반 된 친구 ㅋㅋㅋ 내년에도 보겠네! \n 네가 물고기랑 새를 비롯한 자연물을 좋아하는 게 너무 귀여웠어 ㅋㅋㅋ \n 그리고 말할 때 눈이 반짝이는 것 같아서 신기해,, \n 내년에도 잘 지내보자! 원경이도 있기도 하고 기대된다 벌써,, \n 그리고 아무리 바빠도 급식 좀 잘 챙겨 먹어 ㅡㅡ 안 그럼 내가 또 급식실에서 디저트 매일매일 가져올 거야! \n 할 일이 많더라도 너 건강 상한단 말야! 고3때는 급식실까지 내가 만날 끌고 가야겠다! \n 말이 너무 두서없었나.. 고생했고 내년에 보자!!`);
+      } else if (number === 2) {
+        alert(`${number}번 : 지원이에게 \n 중학교 때부터 알다가 처음으로 드디어 같은 반이 된 것 같아! \n 멀리서 인사만 하다가 가까워져서, 수학여행 장소까지 이동도 같이 하구 버스에서 짧게 이야기 나눈 시간도 좋았어! \n 평소 스트레스 많이 받는 것 같아서 속상한데,, 마음 편하게 가졌음 좋겠다..ㅠㅠ \n 사실 그게 제일 어려운 일이긴 하지만 짐을 조금 덜 수 있었으면 하는 마음.. \n 항상 열심히 하는 모습이 대단해 보였어, 꼭 잘 됐음 좋겠다! \n 또 언젠가는 네가 좋아하는 일 꼭 찾길 진심으로 바랄게! 분명 그럴 수 있을 거야, \n 한 해 고생 많았구 종종 문자로 연락 줘서 고마워!`);
+      } else if (number === 3) {
+        alert(`${number}번 : 초연이에게 \n 초연아 이 편지 순서를 이름 성자 가나다 순으로 배열했는데 \n 원래는 앞에 있어야 할 사람이 출석번호 27번이라 그런지 어색하다! \n 너는 첫인상도 예뻤는데 지금도 이쁜 것 같어! \n 그리고 그동안 내 말에 잘 웃어줘서 고마워.. \n 내가 안 웃은 건 내가 웃었는데 다른 사람이 안 웃으면 민망할까 봐였어 ㅋㅋㅋ 오해하지 말구(?), \n 앗 그리고 네 말대로 나중에 같이 놀러가자! \n 종업식 축하하구, 경복궁엘 갔을 때에도, 기타 일상 속에서도 좋은 추억 많이 만들어줘서 고마워! \n  한 해 즐거웠어!`);
+      } else if (number === 4) {
+        alert(`${number}번 : 세현이에게 \n 세현아 우리 반에서 왕언니(?)지만 너 진짜 너무 귀여운 것 같애!! \n 진짜 내 동생 하면 안 될까 ㅠㅠㅠ 나 잘 해줄 수 있는데(?) \n 주황색 마리몽이랑 같이! (어 이름 외웠다!) \n 시험 기간에 생물 문제 같이 풀었던 일들이 생각난다.. 평소에 비해서 훨씬 잘 풀렸는데 ㅋㅋㅋ 대신에 네가 내 바보같은(?) 면도 다 알아버렸지만 ㅠㅠ \n 같이 머리 맞대고 고민하던 시간을 잊지 못할 것 같아! \n 그러면서도 그동안 힘들 때 이야기 들어 주어 고맙고, 너도 힘든 일 있음 이야기 해주면 좋겠어! \n 생일 너무 늦게 축하해 줘서 미안하구 내년에 잠시 멀어지지만 연락하고 지내자!`);
+      } else if (number === 5) {
+        alert(`${number}번 : 주원이에게 \n 주원아 학기 첫 날부터 다가와서 언니처럼 대해 주어서 고마워! \n 학기 초에 거대한 목련 나무에서 사진을 찍던 일이 엊그제 같은데 시간이 왜 이렇게 빨리 지나가 버렸지.. \n 벚꽃 내리던 날 서로 사진 찍어준 일이 눈에 선하단 말야 ㅠㅠ \n 늘 입버릇처럼 하는 말이지만 너같은 언니 있음 좋겠다는 생각을 많이 하는 것 같아, \n 학기 초 방황하던(?) 나를 데려와 주어서, \n 또 그동안 잘 챙겨주고 같이 이야기 나눈 시간들도 전부 고마워! \n 급식 같이 먹던 일도 즐거웠어! 3학년 때도 잘 지내길 바라!`);
+      } else if (number === 6) {
+        alert(`${number}번 : 한슬이에게 \n 한슬아 고생 많았어! \n 요즘 몸은 괜찮아? \n 종종 조퇴를 해서 자주 못 본 것 같아 아쉬워.. \n 그래도 우리, 주원이랑 같이 영어 수행평가 할 때 학교에 나와준 의리?가 고마웠어! \n 가끔 급식을 먹을 때 네가 없으면 "오늘은 일곱 명이 아니네.."하면서 아쉬웠던 것 같아. \n 고3때는 아픈 곳 없이 건강했으면 좋겠다..ㅠㅠ \n 그동안 고생 했어, 아프지 마!`);
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="photos">
+      <div id="image1" class="photo-frame" onmouseover="hideText(1)" onmouseout="showText(1)" onclick="alertText(1)">
+        <span id="desc1" class="photo_description">서연이에게</span>
+      </div>
+      <div id="image2" class="photo-frame" onmouseover="hideText(2)" onmouseout="showText(2)" onclick="alertText(2)">
+        <span id="desc2" class="photo_description">지원이에게</span>
+      </div>
+      <div id="image3" class="photo-frame" onmouseover="hideText(3)" onmouseout="showText(3)" onclick="alertText(3)">
+        <span id="desc3" class="photo_description">초연이에게</span>
+      </div>
+      <div id="image4" class="photo-frame" onmouseover="hideText(4)" onmouseout="showText(4)" onclick="alertText(4)">
+        <span id="desc4" class="photo_description">세현이에게</span>
+      </div>
+      <div id="image5" class="photo-frame" onmouseover="hideText(5)" onmouseout="showText(5)" onclick="alertText(5)">
+        <span id="desc5" class="photo_description">주원이에게</span>
+      </div>
+      <div id="image6" class="photo-frame" onmouseover="hideText(6)" onmouseout="showText(6)" onclick="alertText(6)">
+        <span id="desc6" class="photo_description">한슬이에게</span>
+      </div>
+      <div id="image7" class="photo-frame" onmouseover="hideText(7)" onmouseout="showText(7)" onclick="alertText(7)">
+        <span id="desc7" class="photo_description">랜만에 재회(?)한 선비들</span>
+      </div>
+      <div id="image8" class="photo-frame" onmouseover="hideText(8)" onmouseout="showText(8)" onclick="alertText(8)">
+        <span id="desc8" class="photo_description">경회루에 산책 나온 아가씨 한 분!</span>
+      </div>
+      <div id="image9" class="photo-frame" onmouseover="hideText(9)" onmouseout="showText(9)" onclick="alertText(9)">
+        <span id="desc9" class="photo_description">주원이 뿔달렸다!</span>
+      </div>
+      <div id="image10" class="photo-frame" onmouseover="hideText(10)" onmouseout="showText(10)" onclick="alertText(10)">
+        <span id="desc10" class="photo_description">세 명의 이쁜이들 ><</span>
+      </div>
+      <div id="image11" class="photo-frame" onmouseover="hideText(11)" onmouseout="showText(11)" onclick="alertText(11)">
+        <span id="desc11" class="photo_description">한복남 거울 앞에서 찰칵</span>
+      </div>
+      <div id="image12" class="photo-frame" onmouseover="hideText(12)" onmouseout="showText(12)" onclick="alertText(12)">
+        <span id="desc12" class="photo_description">경회루 앞에서 단체사진</span>
+      </div>
+      <div id="image13" class="photo-frame" onmouseover="hideText(13)" onmouseout="showText(13)" onclick="alertText(13)">
+        <span id="desc13" class="photo_description">한 해 너무 고생 많았어! feat.서연이 그림</span>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="f-title">종업식을 너무너무 축하해요!</p>
+      <p class="f-date">2023.02.09</p>
+    </div>
+  </div>
+</body>
+
+</html>
